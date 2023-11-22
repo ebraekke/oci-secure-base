@@ -11,3 +11,7 @@ resource "random_password" "_password" {
   min_numeric      = 1
   min_special      = 1
 }
+
+locals {
+  password = random_password._password.result
+}
