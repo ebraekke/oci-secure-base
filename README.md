@@ -1,10 +1,10 @@
 # oci-secure-base
-Repo for defining secrets with Resource Manager (RM)
 
+Repo for defining secrets with Resource Manager (RM)
 
 ## Create 
 
-```
+```bash
 terraform plan --out=oci-secure-base.tfplan --var-file=config/vars_arn.tfvars
 ```
 
