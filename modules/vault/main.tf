@@ -18,8 +18,4 @@ resource oci_kms_key my_master_key {
 
     management_endpoint = data.oci_kms_vault.my_vault.management_endpoint
     protection_mode     = "SOFTWARE"
-
-    lifecycle {
-        prevent_destroy = true
-    }
 }
