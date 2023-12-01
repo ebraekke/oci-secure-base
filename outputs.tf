@@ -3,19 +3,20 @@
 output "ads" {
   value = data.oci_identity_availability_domains.ads
 }
-/*
-
-/* This is what happens when you output a password
 */
+
 output "dbg_dasigret" {
-  value = local.password
-  sensitive = true
+  description = "This is what happens when you output a password"
+  value       = local.password
+  sensitive   = true
 }
 
 output "exp_vault_ocid" {
-  value = module.vault.vault_ocid
+  description = "The OCID of the vault"
+  value       = module.vault.vault_ocid
 }
 
 output "exp_vault_master_key_ocid" {
+  description = "The OCID of the master key"
   value = module.vault.vault_master_key_ocid
 }

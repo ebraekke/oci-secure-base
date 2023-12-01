@@ -31,7 +31,7 @@ $C = "ocid1.compartment.oc1..somehashlikestring"
 $config_source  = "C:\Users\espenbr\GitHub\oci-secure-base\config\test_rel.zip"
 $variables_file = "C:/Users/espenbr/GitHub/oci-secure-base/config/vars_arn.json"
 $disp_name = "DEV 1.Secure base"
-$desc = "DEV Base RM"
+$desc = "DEV 1 oci-secure-base RM"
 $wait_spec="--wait-for-state=ACTIVE"
 
 oci resource-manager stack create --config-source=$config_source --display-name="$disp_name" --description="$desc" --variables=file://$variables_file -c $C --terraform-version=1.2.x $wait_spec
