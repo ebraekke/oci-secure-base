@@ -7,7 +7,7 @@ output "ads" {
 
 output "dbg_dasigret" {
   description = "This is what happens when you output a password"
-  value       = local.password
+  value       = local.exposed_password
   sensitive   = true
 }
 
