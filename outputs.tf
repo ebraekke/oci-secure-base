@@ -20,3 +20,8 @@ output "mongo_password_ocid" {
     description = "The OCID of the mongo pwd"
     value       = module.mongo_secret.secret_ocid
 }
+
+output "vault_ocid" {
+    description = "The OCID of the vault"
+    value       = module.vault.vault_ocid
+}
