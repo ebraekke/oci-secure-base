@@ -1,5 +1,7 @@
 # ebraekke/oci-secure-base
 
+TODO: Clean up doc. 
+
 Repo for defining secrets with Resource Manager (RM)
 
 ## Download the latest version of the Resource Manager ready stack from the releases section
