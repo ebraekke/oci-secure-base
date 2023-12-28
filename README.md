@@ -1,11 +1,48 @@
-# oci-secure-base
+# ebraekke/oci-secure-base
 
 Repo for defining secrets with Resource Manager (RM)
+
+## Download the latest version of the Resource Manager ready stack from the releases section
+
+Or you can just click the button below.
+
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/ebraekke/oci-secure-base/releases/download/v0.9.0-alpha.1/oci-secure-base_0.9.0.zip)
+
+## Session based authentication
+
+Provide the name of the session created using `oci cli session autenticate` in the variable `oci_cli_profile`.
+
+## Required input parameters
+
+```hcl
+variable "set_name" {
+    description = "The name of or role of this set, used as base for naming, typicall test/dev/qa"
+}
+
+variable "compartment_ocid"     {
+    description = "ocid of compartment"
+}
+```
+
+## Default parameters
+
+The following "default" parameters need to be passed to the oci terraform provider.
+
+```hcl
+variable "region"               { default = "eu-stockholm-1"}
+variable "oci_cli_profile"      {
+    description = "name of oci cli profile used for session based auth"
+    default     = "nosearn"
+}
+variable "tenancy_ocid"         {}
+```
 
 ## Create 
 
 ```bash
 terraform plan --out=oci-secure-base.tfplan --var-file=config/vars_arn.tfvars
+
+terraform apply "oci-secure-base.tfplan"
 ```
 
 ## Resource Manager
