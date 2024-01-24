@@ -21,6 +21,11 @@ output "mongo_password_ocid" {
     value       = module.mongo_secret.secret_ocid
 }
 
+output "ssh_key_ocid" {
+    description = "The OCID of thessh key"
+    value       = module.ssh_secret.secret_ocid
+}
+
 output "vault_ocid" {
     description = "The OCID of the vault"
     value       = module.vault.vault_ocid

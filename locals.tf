@@ -36,6 +36,11 @@ resource "random_password" "mongo_password" {
   min_special      = 1
 }
 
+# Maybe not clean, but put here
+resource "tls_private_key" "the_ssh_key" {
+  algorithm = "ECDSA"
+}
+
 locals {
   exposed_password = random_password.exposed_password.result
 
