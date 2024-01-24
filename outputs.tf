@@ -22,7 +22,7 @@ output "mongo_password_ocid" {
 }
 
 output "ssh_key_ocid" {
-    description = "The OCID of thessh key"
+    description = "The OCID of the ssh key"
     value       = module.ssh_secret.secret_ocid
 }
 
