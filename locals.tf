@@ -39,6 +39,7 @@ resource "random_password" "mongo_password" {
 # Maybe not clean, but put here
 resource "tls_private_key" "the_ssh_key" {
   algorithm = "ECDSA"
+  rsa_bits  = 4096
 }
 
 locals {

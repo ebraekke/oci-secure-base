@@ -30,3 +30,12 @@ output "vault_ocid" {
     description = "The OCID of the vault"
     value       = module.vault.vault_ocid
 }
+
+/* Debug
+TODO: Remove
+output "debug_secret"  {
+    description = "The BASE 64 encoded secret"
+    value       = base64encode(tls_private_key.the_ssh_key.private_key_pem)  
+    sensitive   = true 
+}
+*/
