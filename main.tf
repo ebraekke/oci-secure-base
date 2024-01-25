@@ -40,6 +40,6 @@ module "ssh_secret" {
     display_name        = "${var.set_name}-ssh-secret"
     description         = "${var.set_name}-ssh-secret: ssh secret for hosts"
     vault_ocid          = module.vault.vault_ocid
-    content             = base64encode(tls_private_key.the_ssh_key.private_key_pem)
+    content             = base64encode(tls_private_key.the_ssh_key.private_key_openssh)
     key_ocid            = module.vault.vault_master_key_ocid
 }
