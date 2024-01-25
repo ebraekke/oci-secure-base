@@ -5,6 +5,7 @@ resource oci_vault_secret my_secret {
 
     secret_content {
         content_type = "BASE64"
+        name         = var.display_name 
         content      = var.content  
     }
 
