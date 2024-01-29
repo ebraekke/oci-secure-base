@@ -5,7 +5,7 @@ resource oci_vault_secret my_secret {
 
     secret_content {
         content_type = "BASE64"
-        name         = "${var.display_name}-${random_string.secret_name}"
+        name         = "${var.display_name}-${random_string.secret_name.result}"
         content      = var.content  
     }
 
