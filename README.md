@@ -63,13 +63,26 @@ Create ZIP archive, add non-tracked file from config dir.
 git archive --add-file config\provider.tf --format=zip HEAD -o .\config\test_rel.zip
 ```
 
-### Create stack
+### Create stack in FRA
+
+```bash
+$C = "ocid1.compartment.oc1..somehashlikestring"
+$config_source  = "C:\Users\espenbr\GitHub\oci-secure-base\config\test_rel.zip"
+$variables_file = "C:/Users/espenbr/GitHub/oci-secure-base/config/vars_fra.json"
+$disp_name = "DEV 1.Secure base FRA"
+$desc = "DEV 1 oci-secure-base RM"
+$wait_spec="--wait-for-state=ACTIVE"
+
+oci resource-manager stack create --config-source=$config_source --display-name="$disp_name" --description="$desc" --variables=file://$variables_file -c $C --terraform-version=1.2.x $wait_spec
+```
+
+### Create stack in ARN
 
 ```bash
 $C = "ocid1.compartment.oc1..somehashlikestring"
 $config_source  = "C:\Users\espenbr\GitHub\oci-secure-base\config\test_rel.zip"
 $variables_file = "C:/Users/espenbr/GitHub/oci-secure-base/config/vars_arn.json"
-$disp_name = "DEV 1.Secure base"
+$disp_name = "DEV 1.Secure base ARN"
 $desc = "DEV 1 oci-secure-base RM"
 $wait_spec="--wait-for-state=ACTIVE"
 
